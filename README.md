@@ -30,7 +30,6 @@ Developed with React, Redux, Material UI.
 1. ```git clone https://github.com/yardenavr/grocery-list-app```
 2. Install all packages with ```npm install```
 3. Run ```npm start```
-</br>
 
 ## :rocket: Demo
 Click to see the [demo]() of my app. </br>
