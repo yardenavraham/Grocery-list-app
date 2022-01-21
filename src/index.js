@@ -7,6 +7,15 @@ import { Provider } from 'react-redux';
 import appStore from './redux/store';
 import throttle from 'lodash/throttle';
 import {saveState} from './localStorage/localStorage';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     backgroundColor: "#8BC6EC",
+//     background: 'linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%)',
+//   },
+// }));
 
 appStore.subscribe(throttle(() => {
     saveState({

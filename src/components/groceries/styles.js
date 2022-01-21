@@ -1,7 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  Title: {
+    
+ title: {
     margin: "1rem 2rem",
     padding: "1rem",
   },

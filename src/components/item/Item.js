@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { Button, Card, CardMedia, CardContent, CardActions, Typography, Stack , Box} from '@mui/material';
 
 function ItemComponent(props) {
