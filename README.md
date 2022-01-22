@@ -32,4 +32,4 @@ Developed with React, Redux, Material UI.
 3. Run ```npm start```
 
 ## :rocket: Demo
-Click to see the [demo](https://grocery-list-yarden.herokuapp.com/) of my app. </br>
+Click [here](https://grocery-list-yarden.herokuapp.com/) see the demo.</br>
