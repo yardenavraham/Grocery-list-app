@@ -8,7 +8,7 @@ import appStore from './redux/store';
 import throttle from 'lodash/throttle';
 import { saveState } from './localStorage/localStorage';
 
-
+//throttle ensures that the inner function is not going to be called more often than the number of milliseconds that is specified. 
 appStore.subscribe(throttle(() => {
   saveState({
     items: appStore.getState().items

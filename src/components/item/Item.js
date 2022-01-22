@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { Button, Card, CardMedia, CardContent, CardActions, Typography, Stack , Box} from '@mui/material';
+import { Button, Card, CardMedia, CardContent, Typography, Box} from '@mui/material';
 
+//This component represents one item in the list
 function ItemComponent(props) {
 
     const dispatch = useDispatch();

@@ -1,6 +1,7 @@
 import Groceries from './components/groceries/Groceries';
 
 function App() {
+
   return (
       <Groceries />
   );

@@ -42,6 +42,7 @@ function GroceriesComp() {
 
     }
 
+    //Add item when enter is pressed
     const handleKeyPress = e => {
         if (e.key === "Enter") {
             addItem()
@@ -65,10 +66,10 @@ function GroceriesComp() {
                         onKeyPress={handleKeyPress} id="outlined" label="Add item"
                         error={isGrocery === false}
                         helperText={isGrocery === false ? 'Did not find this grocery' : ' '}></TextField>
-                    <Button className = {classes.btn} onClick={addItem} variant="contained">Add</Button>
+                    <Button className={classes.btn} onClick={addItem} variant="contained">Add</Button>
                 </Stack>
-                
-                <ul className = {classes.ulStyle}>
+
+                <ul className={classes.ulStyle}>
                     {
                         storeData.items?.map((x, index) => {
                             return <Item key={index} id={x.id} name={x.name} img={x.img}></Item>
