@@ -3,10 +3,11 @@
 
 ## :pencil2: About The Project
 This grocery list application helps users organize and manage the groceries they want to buy. 
+Each grocery in the list shows a photo of the grocery. The photos are taken from Umsplash [api](https://unsplash.com/developers).
 
 
 ## :star: Built with
-Developed with React, Redux, Material UI.
+React, Redux, Material UI.
 
 ## :orange_book: Folders
 <ul>
