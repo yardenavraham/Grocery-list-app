@@ -26,7 +26,8 @@ Developed with React, Redux, Material UI.
 <li>localStorage: Contains localStorage.js to save data in the local storage.</li>
 </ul>
 
-## :dart: Installation
+:dart:
+##  Installation
 1. ```git clone https://github.com/yardenavr/grocery-list-app```
 2. Install all packages with ```npm install```
 3. Run ```npm start```
