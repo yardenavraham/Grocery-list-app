@@ -22,15 +22,24 @@ function GroceriesComp() {
 
     //State
     const [item, setItem] = useState({ id: 0, name: '', img: '' });
+    const [isGrocery, setIsGrocery] = useState(true);
 
     //Gets an image and set new item to the list.
     const addItem = () => {
         axios.get(`${apiRoot}/search/photos?query=${item.name}&client_id=${accessKey}`)
             .then(res => {
-                setItem({ ...item, img: res.data.results[0].urls.regular })
-                dispatch({ type: "ADD", payload: { ...item, ["img"]: res.data.results[0].urls.regular } })
+                if (res.data.results[0] === undefined) {
+                    setIsGrocery(false);
+                    return;
+                }
+                else {
+                    setIsGrocery(true);
+                    setItem({ ...item, img: res.data.results[0].urls.regular })
+                    dispatch({ type: "ADD", payload: { ...item, ["img"]: res.data.results[0].urls.regular } })
+                }
+
             });
-  
+
     }
 
     const handleKeyPress = e => {
@@ -44,16 +53,22 @@ function GroceriesComp() {
             <Grid container
                 direction="column"
                 justifyContent="center"
-                alignItems="center"
-                >
+                alignItems="center">
+
                 <Typography className={classes.title} component="div" variant="h4">
                     Grocery List
                 </Typography>
+
                 <Stack spacing={2} direction="row">
-                    <TextField onChange={e => setItem({ ...item, id: storeData.items.length, name: e.target.value })} onKeyPress={handleKeyPress} id="outlined" label="Add item"></TextField>
-                    <Button onClick={addItem} variant="contained">Add</Button>
+                    <TextField onChange={e =>
+                        setItem({ ...item, id: storeData.items.length, name: e.target.value })}
+                        onKeyPress={handleKeyPress} id="outlined" label="Add item"
+                        error={isGrocery === false}
+                        helperText={isGrocery === false ? 'Did not find this grocery' : ' '}></TextField>
+                    <Button className = {classes.btn} onClick={addItem} variant="contained">Add</Button>
                 </Stack>
-                <ul>
+                
+                <ul className = {classes.ulStyle}>
                     {
                         storeData.items?.map((x, index) => {
                             return <Item key={index} id={x.id} name={x.name} img={x.img}></Item>
